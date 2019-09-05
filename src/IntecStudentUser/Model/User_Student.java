@@ -8,6 +8,21 @@ public class User_Student {
     protected String comment;
 
     public User_Student(String name, String email, String comment) {
+
+        this.name = name;
+        this.email = email;
+        this.comment = comment;
+    }
+
+
+    @Override
+    public String toString() {
+        return "User_Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", comment='" + comment + '\'' +
+                '}';
     }
 
     public int getId() {
@@ -43,9 +58,6 @@ public class User_Student {
     }
 
     public User_Student(int id, String name, String email, String comment) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.comment = comment;
+
     }
 }

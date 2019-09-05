@@ -12,10 +12,10 @@ public class User_Student_DAO {
     private String jdbcUserName = "root";
     private String jdbcPassWord = "";
 
-    private static final String INSERT_USERS_SQL = "INSERT INTO users" + " (name, email, comment)  VALUES (?, ?, ?);";
+    private static final String INSERT_USERS_SQL = "INSERT INTO users (name, email, comment) VALUES (?, ?, ?);";
 
     private static final String SELECT_USER_BY_ID = "select id,name,email,comment from users where id =?";
-    private static final String SELECT_ALL_USERS = "select * from users";
+    private static final String SELECT_ALL_USERS = "select * from users;";
     private static final String DELETE_USERS_SQL = "delete from users where id = ?;";
     private static final String UPDATE_USERS_SQL = "update users set name = ?,email= ?, comment =? where id = ?;";
 
@@ -36,11 +36,11 @@ public class User_Student_DAO {
         return connection;
     }
 
-    public void insertStudentUser(User_Student user) throws SQLException {
+    public void insertStudentUser(User_Student user1) throws SQLException {
         System.out.println(INSERT_USERS_SQL);
-        // try-with-resource statement will auto close the connection.
-        try (Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
+        User_Student user = user1;
+
+        try (Connection connection = getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getEmail());
             preparedStatement.setString(3, user.getComment());
@@ -57,7 +57,7 @@ public class User_Student_DAO {
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_USER_BY_ID);) {
             preparedStatement.setInt(1, id);
             System.out.println(preparedStatement);
-            // Step 3: Execute the query or update query
+
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
@@ -88,8 +88,8 @@ public class User_Student_DAO {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
                 String email = rs.getString("email");
-                String country = rs.getString("country");
-                user_students.add(new User_Student(id, name, email, country));
+                String comment = rs.getString("comment");
+                user_students.add(new User_Student(id, name, email, comment));
             }
         } catch (SQLException e) {
             printSQLException(e);

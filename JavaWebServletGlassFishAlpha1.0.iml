@@ -22,17 +22,63 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://E:/Dependencies/mariadb-java-client-2.4.3.jar!/" />
+          <root url="jar://E:/Dependencies/jstl-1.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../Dependencies/jstl-1.2.jar.zip!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.20" level="application_server_libraries" />
+    <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://E:/Dependencies/jstl-1.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../Dependencies/apache-tomcat-9.0.24-windows-x64/apache-tomcat-9.0.24/bin/tomcat-juli.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../Dependencies/tomcat-servlet-api-7.0.6.jar/tomcat-servlet-api-7.0.6.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../Dependencies/jstl-1.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../Dependencies/javax.servlet.jsp-api-2.3.1.jar/javax.servlet.jsp-api-2.3.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../Dependencies/mariadb-java-client-2.3.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../Dependencies/mariadb-java-client-2.4.3.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

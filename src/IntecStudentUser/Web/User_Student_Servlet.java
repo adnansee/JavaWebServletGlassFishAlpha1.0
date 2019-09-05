@@ -17,15 +17,12 @@ import java.util.List;
 @WebServlet("/")
 public class User_Student_Servlet extends HttpServlet {
     public static final long serialVersionUID = 1L;
-    private User_Student_DAO user_student_dao;
+    private User_Student_DAO user_student_dao = new User_Student_DAO();;
 
     @Override
     public void init() throws ServletException {
-        user_student_dao = new User_Student_DAO();
+
     }
-
-
-
 
     @Override
         protected void doPost (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -93,6 +90,7 @@ public class User_Student_Servlet extends HttpServlet {
         String email = request.getParameter("email");
         String comment = request.getParameter("comment");
         User_Student newUser = new User_Student(name, email, comment);
+        System.out.println(newUser);
         user_student_dao.insertStudentUser(newUser);
         response.sendRedirect("list");
     }
@@ -102,10 +100,11 @@ public class User_Student_Servlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         String email = request.getParameter("email");
-        String country = request.getParameter("comment");
+        String comment = request.getParameter("comment");
 
-        User_Student book = new User_Student(id, name, email, country);
-        user_student_dao.updateUser(book);
+
+        User_Student user = new User_Student(id, name, email, comment);
+        user_student_dao.updateUser(user);
         response.sendRedirect("list");
     }
 
